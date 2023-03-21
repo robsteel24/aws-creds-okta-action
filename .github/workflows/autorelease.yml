@@ -40,7 +40,7 @@ jobs:
           draft: false
           prerelease: false
           # An optional tag for the release. If this is omitted the git ref will be used (if it is a tag).
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.TOKEN }}
 
   build-and-push-docker-image:
     needs: github-release
@@ -77,7 +77,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.TOKEN }}
 
       - name: Extract metadata (tags, labels) for Docker
         id: meta
