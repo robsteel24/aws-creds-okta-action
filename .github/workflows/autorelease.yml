@@ -4,7 +4,6 @@ on:
 
 jobs:
   github-release:
-    if: github.event.pull_request.merged == true && contains(toJSON(github.event.pull_request.labels.*.name), '"autorelease"')
     runs-on: ubuntu-latest
     env:
       manifest_file: 'manifest.yml'
